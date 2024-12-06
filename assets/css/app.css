@@ -1,6 +1,6 @@
 
 :root {
-  --primary-400: ##0DA349;
+  --primary-400: #0DA349;
   --light-text-300: #4A4658;
   --light-text-100: #7B7885;
   --stroke: #DCE5F0;
@@ -122,14 +122,20 @@
 }
 
 .tab-item {
-  padding: 10px 20px;
+  padding: 6px 16px;
   cursor: pointer;
   margin-right: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-400);
+  color: var(--primary-400);
+  transition: background-color ease 0.3s;
 }
 
 .tab-item.active {
-  background-color: #f1f1f1;
-  border-radius: 4px;
+  background-color: var(--primary-400);
+  color: #fff;
 }
 
 /* Conteúdo das abas */
