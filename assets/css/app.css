@@ -1,6 +1,8 @@
 
 :root {
   --primary-400: #0DA349;
+  --primary-btn: #008A35; 
+  --primary-btn-hover: #0B843B;
   --light-text-300: #4A4658;
   --light-text-100: #7B7885;
   --stroke: #DCE5F0;
@@ -64,6 +66,24 @@
 
 .highlight {
   color: var(--primary-400) !important;
+}
+
+.hero-btn {
+  display: flex;
+  background-color: var(--primary-btn);
+  color: #fff !important;
+  width: 100%;
+  max-width: 504px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 40px;
+  font-weight: 400;
+}
+
+.hero-btn:hover {
+  background-color: var(--primary-btn-hover);
 }
 
 .logo-content img {
@@ -134,8 +154,9 @@
 }
 
 .tab-item.active {
-  background-color: var(--primary-400);
+  background-color: var(--primary-btn);
   color: #fff;
+  border: none;
 }
 
 /* Conteúdo das abas */

@@ -42,12 +42,17 @@ if ($appLogo = get_field('app_logo')) {
         <div class="hero-column text-content">
             <h1>Integrar o <span class="highlight"><?php echo esc_html(get_the_title()); ?></span> aos seus sistemas nunca foi tão simples!</h1>
             <p>Integre agora o <?php echo esc_html(get_the_title()); ?> com seus demais sistemas e coloque tarefas no piloto automático! Plataforma gratuita. Webhooks gratuitos.</p>
+
+            <a class="hero-btn" href="#">
+                Integrar <?php echo esc_html(get_the_title()); ?>
+            </a>
         </div>
         <div class="hero-column logo-content">
             <?php if ($appLogo) : ?>
                 <img src="<?php echo esc_url($app_logo_url); ?>" alt="Logo do <?php echo esc_html(get_the_title()); ?>" />
             <?php endif; ?>
         </div>
+
     </div>
 </section>
 
