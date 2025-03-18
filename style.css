@@ -1,8 +1,7 @@
 /**
- * Theme Name:     Hello Elementor Child
+ * Theme Name:     React theme
  * Author:         Elementor Team
- * Template:       hello-elementor
- * Text Domain:	   hello-elementor-child
+ * Text Domain:	   teste
  * Description:    A plain-vanilla &amp; lightweight theme for Elementor page builder
  */
 
@@ -17,6 +16,16 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
 } */
+
+/* Banner  */
+.banner {
+  background-color: #171917;
+  color: #fff;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Navbar */
 .navbar {

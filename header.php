@@ -9,6 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">
