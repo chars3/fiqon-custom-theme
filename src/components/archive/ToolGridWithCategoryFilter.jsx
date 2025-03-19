@@ -31,6 +31,8 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
 
                 let filteredTools = data;
 
+                console.log(filteredTools)
+
                 if (selectedCategory) {
                     filteredTools = filteredTools.filter(app =>
                         app["app-category"] && app["app-category"].includes(selectedCategory)
@@ -41,7 +43,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                 if (searchQuery) {
                     filteredTools = filteredTools.filter(tool => {
                         const appTitle = tool.acf?.app_title || "";
-                        const appName = tool.title?.rendered || ""; // Alterado para pegar title.rendered caso seja um objeto
+                        const appName = tool.title?.rendered || ""; 
 
                         return (
                             appTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||

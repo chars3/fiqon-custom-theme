@@ -141,3 +141,14 @@ function enqueue_react_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_react_scripts' );
 
+
+require_once get_template_directory() . '/inc/app-actions-metabox.php';
+require_once get_template_directory() . '/inc/app-trigger-metabox.php';
+
+
+
+
+
+
+
+
