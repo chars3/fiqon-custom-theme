@@ -33,6 +33,7 @@ const ConnectTools = () => {
         const formattedTools = data.map((app) => ({
           name: app.acf?.app_title || app.title?.rendered || "Sem nome",
           icon: app.acf?.app_logo?.url || "https://placehold.co/64",
+          link: app.link || "#",
         }));
 
         setTools(formattedTools);
@@ -68,11 +69,13 @@ const ConnectTools = () => {
         />
         <ArrowRight className="w-8 h-8 text-gray-500" />
         {selectedTool ? (
-          <img
-            src={selectedTool.icon}
-            alt={selectedTool.name}
-            className="w-[120px] h-[120px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
-          />
+          <a href={selectedTool.link}>
+            <img
+              src={selectedTool.icon}
+              alt={selectedTool.name}
+              className="w-[120px] h-[120px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
+            />
+          </a>
         ) : (
           <img
             src="https://placehold.co/80"
@@ -102,8 +105,8 @@ const ConnectTools = () => {
           filteredTools.map((tool, index) => (
             <div
               key={index}
+              onClick={() => setSelectedTool(tool)}
               className="text-center flex flex-col items-center cursor-pointer transition-transform hover:scale-105"
-              onClick={() => setSelectedTool(tool)} // ← clique define ferramenta
             >
               <img
                 src={tool.icon}
