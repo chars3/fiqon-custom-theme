@@ -98,7 +98,7 @@ add_action('wp_enqueue_scripts', 'hello_elementor_child_enqueue_assets');
 function enqueue_react_scripts() {
   wp_enqueue_script(
       'react-bundle',
-      get_template_directory_uri() . '/dist/bundle.js',
+      get_stylesheet_directory_uri() . '/dist/bundle.js',
       array(),
       '1.0.0',
       true
