@@ -38,21 +38,21 @@ const PopularActions = ({ actions = tempActions }) => {
       </h2>
       
       {/* Barra de busca */}
-      <div className="flex items-center bg-white rounded-full px-4 py-2 w-full shadow-sm mt-4">
+      {/* <div className="flex items-center bg-white rounded-full px-4 py-2 w-full shadow-sm mt-4">
         <Search className="text-gray-400" size={20} />
         <input
           type="text"
           placeholder="Buscar por ação"
           className="w-full bg-transparent outline-none px-2 text-gray-700"
         />
-      </div>
+      </div> */}
       
       {/* Informação de exibição */}
-      <div className="flex justify-end">
+      {/* <div className="flex justify-end">
         <p className="text-gray-500 text-sm mt-2">
           Exibindo 1 - 5 de 5000 ações por popularidade
         </p>
-      </div>
+      </div> */}
       
       {/* Lista de ações */}
       <div className="mt-4 space-y-3">

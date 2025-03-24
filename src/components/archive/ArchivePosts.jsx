@@ -20,7 +20,7 @@ const ArchivePosts = ({ posts }) => {
       <Hero />
       <section className="w-full flex flex-col items-center pb-10">
         <div className="w-full max-w-[1280px]">
-          <div className="my-6">
+          <div className="mt-8">
             <SearchBar onSearch={setSearchQuery} />
           </div>
         </div>

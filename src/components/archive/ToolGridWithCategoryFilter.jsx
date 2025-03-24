@@ -66,7 +66,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     return (
         <div className="flex gap-4">
             {/* Filtro de Categoria */}
-            <div className="p-4 border rounded-lg w-1/4">
+            <div className="p-4 w-1/4">
                 <h3 className="text-gray-600 font-semibold mb-2 border-b pb-2">POR CATEGORIA</h3>
                 <div className="px-2">
                     <ul className="space-y-2">
@@ -86,7 +86,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
             </div>
             
             {/* Grid de Ferramentas */}
-            <div className="flex flex-col border w-3/4">
+            <div className="flex flex-col w-3/4">
                 <div className="grid grid-cols-5 gap-4 p-4 w-full">
                     {loading ? (
                         <p className="col-span-5 text-center">Carregando ferramentas...</p>
@@ -111,8 +111,9 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                         Lorem ipsum dolor sit amet consectetur. Dictumst sit mattis risus leo risus cras.
                     </p>
                     <a
-                        href="#"
+                        href="https://doc.clickup.com/31083618/d/h/xmk32-86893/760bc715a491aac"
                         className="text-green-600 font-semibold flex items-center mt-2"
+                        target="_blank"
                     >
                         Conectar ferramenta <ArrowRight className="ml-2" size={16} />
                     </a>
