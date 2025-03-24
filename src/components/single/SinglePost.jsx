@@ -32,11 +32,11 @@ const SinglePost = ({ post }) => {
         </div>
       </section>
       {/* Section Integrações populares  */}
-      <section className="w-full flex justify-center pb-10">
+      {/* <section className="w-full flex justify-center pb-10">
         <div className="max-w-[1280px] w-full flex flex-col">
           <PopularIntegrations />
         </div>
-      </section>
+      </section> */}
       {/* Section FAQ  */}
       <section className="w-full flex justify-center py-10">
         <div className="max-w-[1008px] w-full flex flex-col">
