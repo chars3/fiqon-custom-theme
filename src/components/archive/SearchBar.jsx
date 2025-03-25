@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 
 const SearchBar = ({ onSearch }) => {
   return (
-      <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 w-full shadow-sm">
+      <div className="flex items-center border border-[#E3EAE5] bg-bg-light-green rounded-full px-4 py-3 w-full shadow-sm">
           <Search className="text-gray-400" size={20} />
           <input
               type="text"
