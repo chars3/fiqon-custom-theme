@@ -89,9 +89,14 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     <div className="flex gap-4">
       {/* Filtro de Categoria */}
       <div className="p-4 w-1/4">
-        <h3 className="text-gray-600 font-semibold mb-2 border-b pb-2">
+        <h3 className="text-100 font-semibold mb-2 border-b pb-2">
           POR CATEGORIA
         </h3>
+
+        <p className="text-text-100">Texto suave</p>
+<p className="text-primary font-bold">Texto principal</p>
+<div className="bg-bg-light-green p-4 rounded">Fundo claro verde</div>
+<div className="border border-stroke rounded">Borda padrão</div>
         <div className="px-2">
           <ul className="space-y-2">
             {categories.map((category, index) => (
