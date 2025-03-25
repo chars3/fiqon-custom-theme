@@ -89,28 +89,23 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     <div className="flex gap-4">
       {/* Filtro de Categoria */}
       <div className="p-4 w-1/4">
-        <h3 className="text-100 font-semibold mb-2 border-b pb-2">
+        <h3 className="text-text-100 font-sans font-[500] mb-2 border-b border-stroke-green-200 pb-2">
           POR CATEGORIA
         </h3>
-
-        <p className="text-text-100">Texto suave</p>
-<p className="text-primary font-bold">Texto principal</p>
-<div className="bg-bg-light-green p-4 rounded">Fundo claro verde</div>
-<div className="border border-stroke rounded">Borda padrão</div>
         <div className="px-2">
           <ul className="space-y-2">
             {categories.map((category, index) => (
               <li
                 key={index}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex justify-between items-center text-gray-700 cursor-pointer hover:text-green-600 ${
+                className={`flex font-sans justify-between items-center text-text-100 cursor-pointer hover:text-green-600 ${
                   selectedCategory === category.id
-                    ? "text-green-600 font-bold"
+                    ? "text-text-green font-bold"
                     : ""
                 }`}
               >
                 <span>{category.name}</span>
-                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full text-gray-500">
+                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full text-text-100">
                   {category.id === null
                     ? categoryCounts["all"] || 0
                     : categoryCounts[category.id] || 0}
@@ -134,9 +129,9 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                   alt={
                     tool.acf?.app_title || tool.title?.rendered || "Ferramenta"
                   }
-                  className="w-[122px] h-[122px] mx-auto"
+                  className="w-[142px] h-[142px] mx-auto"
                 />
-                <p className="mt-2">
+                <p className="mt-2 text-text-100">
                   {tool.acf?.app_title || tool.title?.rendered}
                 </p>
               </div>
@@ -147,17 +142,17 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
             </p>
           )}
         </div>
-        <div className="bg-gray-100 p-4 rounded-lg mt-4">
-          <p className="font-bold text-gray-800">
+        <div className="bg-bg-light-green p-4 rounded-lg mt-4">
+          <p className="font-bold text-text-300">
             Não encontrou a ferramenta que procura?
           </p>
-          <p className="text-gray-600 text-sm mt-1">
+          <p className="text-text-200 text-sm mt-1">
             Lorem ipsum dolor sit amet consectetur. Dictumst sit mattis risus
             leo risus cras.
           </p>
           <a
             href="https://doc.clickup.com/31083618/d/h/xmk32-86893/760bc715a491aac"
-            className="text-green-600 font-semibold flex items-center mt-2"
+            className="text-text-green text-[14px] font-[500] flex items-center mt-2"
             target="_blank"
           >
             Conectar ferramenta <ArrowRight className="ml-2" size={16} />
