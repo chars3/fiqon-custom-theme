@@ -92,7 +92,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         <h3 className="text-text-100 font-sans font-[500] mb-2 border-b border-stroke-green-200 pb-2">
           POR CATEGORIA
         </h3>
-        <div className="px-2">
+        <div className="px-2 pt-2">
           <ul className="space-y-2">
             {categories.map((category, index) => (
               <li
@@ -105,7 +105,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                 }`}
               >
                 <span>{category.name}</span>
-                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full text-text-100">
+                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-[4px] text-text-100">
                   {category.id === null
                     ? categoryCounts["all"] || 0
                     : categoryCounts[category.id] || 0}
