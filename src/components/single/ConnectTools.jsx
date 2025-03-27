@@ -56,38 +56,39 @@ const ConnectTools = () => {
 
   return (
     <div className="text-center mt-12">
-      <h2 className="text-green-600 text-2xl font-bold">
+      <h2 className="text-primary text-[26px] font-bold">
         Conecte qualquer ferramenta ao {appName}
       </h2>
 
       {/* Conexão Visual */}
-      <div className="flex justify-center items-center mt-6 space-x-4">
+      <div className="flex justify-center items-center mt-6">
         <img
           src={appLogo || "https://placehold.co/80"}
           alt={appName}
-          className="w-[120px] h-[120px] object-contain"
+          className="w-[140px] h-[140px] object-contain"
         />
-        <ArrowRight className="w-8 h-8 text-gray-500" />
+        {/* <ArrowRight className="w-8 h-8 text-gray-500" /> */}
+        <img src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png" alt="Seta" />
         {selectedTool ? (
           <a href={selectedTool.link}>
             <img
               src={selectedTool.icon}
               alt={selectedTool.name}
-              className="w-[120px] h-[120px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
+              className="w-[140px] h-[140px] transition-all duration-200 ease-out scale-100 opacity-100"
             />
           </a>
         ) : (
           <img
-            src="https://placehold.co/80"
+            src="https://fiqon.com.br/wp-content/uploads/2025/03/Mask-group.png"
             alt="Adicionar"
-            className="w-16 h-16 object-contain opacity-50"
+            className="w-[140px] h-[140px] object-contain"
           />
         )}
       </div>
 
       {/* Barra de busca */}
       <div className="flex justify-center mt-6 px-8">
-        <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 w-full shadow-sm">
+        <div className="flex items-center border border-[#E3EAE5] bg-bg-light-green rounded-full px-4 py-3 w-full shadow-sm">
           <Search className="text-gray-400" size={20} />
           <input
             type="text"
@@ -113,7 +114,7 @@ const ConnectTools = () => {
                 alt={tool.name}
                 className="w-[120px] h-[120px] object-contain"
               />
-              <p className="text-gray-800 text-sm mt-2">{tool.name}</p>
+              <p className="text-text-100 text-sm">{tool.name}</p>
             </div>
           ))
         ) : (
