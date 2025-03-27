@@ -33,26 +33,26 @@ const FAQ = () => {
 
   return (
     <div className="w-full mx-auto p-6">
-      <h2 className="text-center text-xl font-bold text-gray-800">Perguntas frequentes</h2>
-      <div className="mt-4">
+      <h2 className="text-center text-[32px] font-bold text-text-200">Perguntas frequentes</h2>
+      <div className="mt-10">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`py-4 ${index !== faqs.length - 1 ? 'border-b' : ''}`}
+            className={`py-6 ${index !== faqs.length - 1 ? 'border-b-2 border-stroke-green-200' : ''}`}
           >
             <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
-              <p className="font-semibold text-gray-800">{faq.question}</p>
+              <p className="font-semibold text-text-300">{faq.question}</p>
               {openIndex === index ? (
-                <X className="text-green-600" size={20} />
+                <X className="text-primary" size={20} />
               ) : (
-                <Plus className="text-green-600" size={20} />
+                <Plus className="text-primary" size={20} />
               )}
             </div>
             {openIndex === index && (
-              <p className="text-gray-600 mt-2">{faq.answer}</p>
+              <p className="text-gray-600 mt-6">{faq.answer}</p>
             )}
           </div>
         ))}
