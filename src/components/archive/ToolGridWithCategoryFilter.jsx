@@ -123,7 +123,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
           alt={tool.acf?.app_title || tool.title?.rendered || "Ferramenta"}
           className="w-[120px] h-[120px] mx-auto object-contain"
         />
-        <p className="mt-2 text-text-100">
+        <p className="mt-2 text-text-100 text-xs sm:text-sm">
           {tool.acf?.app_title || tool.title?.rendered}
         </p>
       </a>
@@ -133,11 +133,11 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       {/* Select mobile/tablet */}
-      <h3 className="text-text-100 font-sans font-[500]">POR CATEGORIA</h3>
+      <h3 className="md:hidden text-text-100 font-sans font-[500]">POR CATEGORIA</h3>
       <div className="block md:hidden relative z-10 mb-4" ref={dropdownRef}>
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="w-full bg-gray-100 rounded-full px-4 py-2 flex justify-between items-center text-sm text-text-100 font-medium outline-none"
+          className="w-full bg-white rounded-full border border-stroke px-4 py-4 flex justify-between items-center text-sm text-text-100 font-medium outline-none"
         >
           <span>
             {categories.find((cat) => cat.id === selectedCategory)?.name ??
