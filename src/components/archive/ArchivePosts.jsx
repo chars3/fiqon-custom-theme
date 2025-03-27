@@ -31,17 +31,17 @@ const ArchivePosts = ({ posts }) => {
         </div>
       </section>
       <section className="w-full flex justify-center py-10">
-        <div className="max-w-[1008px] w-full flex flex-col">
+        <div className="max-w-[1200px] w-full flex flex-col">
           <PopularTriggers />
         </div>
       </section>
       <section className="w-full flex justify-center py-10">
-        <div className="max-w-[1008px] w-full flex flex-col">
+        <div className="max-w-[1200px] w-full flex flex-col">
           <PopularActions />
         </div>
       </section>
       <section className="w-full flex justify-center py-10">
-        <div className="max-w-[1008px] w-full flex flex-col">
+        <div className="max-w-[1200px] w-full flex flex-col">
           <FAQ />
         </div>
       </section>

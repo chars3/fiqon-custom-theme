@@ -27,7 +27,7 @@ const SinglePost = ({ post }) => {
       </section>
       {/* Section Conecte qualquer ferramenta  */}
       <section className="w-full flex justify-center pb-10">
-        <div className="max-w-[1280px] w-full flex flex-col">
+        <div className="max-w-[128 0px] w-full flex flex-col">
           <ConnectTools />
         </div>
       </section>
@@ -39,7 +39,7 @@ const SinglePost = ({ post }) => {
       </section> */}
       {/* Section FAQ  */}
       <section className="w-full flex justify-center py-10">
-        <div className="max-w-[1008px] w-full flex flex-col">
+        <div className="max-w-[1200px] w-full flex flex-col">
           <FAQ />
         </div>
       </section>

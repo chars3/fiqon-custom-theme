@@ -8,10 +8,10 @@ const Hero = () => {
     >
       {/* Conteúdo do Hero */}
       <div className="max-w-2xl px-6">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Lorem ipsum dolor sit amet consectetur. <span className="text-green-600">In urna.</span>
+        <h1 className="text-3xl md:text-[40px] font-bold text-text-300">
+          Lorem ipsum dolor sit amet consectetur. <span className="text-primary">In urna.</span>
         </h1>
-        <p className="mt-4 text-gray-600 text-sm md:text-base">
+        <p className="mt-8 text-text-100 text-sm md:text-lg">
           Lorem ipsum dolor sit amet consectetur. Magna ut vitae sem nunc odio id turpis ut. 
           Nibh etiam eu magnis est cras phasellus amet sed.
         </p>
