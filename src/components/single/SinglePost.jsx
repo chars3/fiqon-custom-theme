@@ -13,7 +13,7 @@ const SinglePost = ({ post }) => {
   console.log(acf.app_trigger);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white px-16">
       <section className="w-full flex justify-center pb-10">
         <div className="w-full flex flex-col">
           <HeroSinglePost post={post} />
