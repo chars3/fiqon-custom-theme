@@ -76,22 +76,22 @@ const Possibilities = () => {
 
   return (
     <div className="text-center">
-      <h2 className="text-green-600 text-2xl font-bold">
+      <h2 className="text-primary text-[26px] font-bold">
         Veja todas as possibilidades
       </h2>
-      <p className="text-gray-700 mt-2">
+      <p className="text-text-200 mt-4 text-lg">
         Confira o que é possível fazer unindo{" "}
-        <span className="font-bold">{appName}</span> e FiqOn
+        <span className="font-bold">{appName}</span> e <span className="font-bold">FiqOn</span>
       </p>
 
       {/* Tabs */}
-      <div className="relative flex justify-center items-center mt-4 pb-2">
-        <div className="absolute w-full h-0.5 bg-dashed border-t border-dashed border-green-600"></div>
+      <div className="relative flex justify-center items-center mt-10 pb-2">
+        <div className="absolute w-full h-0.5 bg-dashed border-t border-dashed border-[#008A35]"></div>
         <div className="relative z-10 flex space-x-4 px-2">
           <button
-            className={`cursor-pointer px-4 py-1 rounded-full ${
+            className={`flex justify-center items-center cursor-pointer px-4 py-2 rounded-xl ${
               activeTab === "triggers"
-                ? "bg-green-600 text-white"
+                ? "bg-text-green text-white"
                 : "border border-gray-300 bg-white text-gray-700"
             }`}
             onClick={() => setActiveTab("triggers")}
@@ -99,10 +99,10 @@ const Possibilities = () => {
             GATILHOS {triggers.length}
           </button>
           <button
-            className={`cursor-pointer px-4 py-1 rounded-full ${
+            className={`flex justify-center items-center cursor-pointer px-4 py-2 rounded-xl ${
               activeTab === "actions"
                 ? "bg-green-600 text-white"
-                : "border border-gray-300 bg-white text-gray-700"
+                : "border border-[#018562] bg-white text-[#018562]"
             }`}
             onClick={() => setActiveTab("actions")}
           >
@@ -117,17 +117,17 @@ const Possibilities = () => {
           <p className="col-span-3 text-center text-gray-500">Carregando...</p>
         ) : (
           (activeTab === "triggers" ? triggers : actions).map((item, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg flex">
-              <div className="flex w-[100px] justify-center items-center">
+            <div key={index} className="bg-[#F6F6F7] p-4 rounded-lg flex items-center gap-6">
+              <div className="flex w-[110px] justify-center items-center">
                 <img
                   src={item.icon}
                   alt={item.title}
-                  className="w-[100px] h-[100px] object-contain"
+                  className="w-[110px] h-[110px] object-contain"
                 />
               </div>
               <div className="w-[80%]">
-                <p className="text-gray-800 font-semibold">{item.title}</p>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <p className="text-text-300 font-medium">{item.title}</p>
+                <p className="text-text-200 text-sm mt-1">{item.description}</p>
               </div>
             </div>
           ))
