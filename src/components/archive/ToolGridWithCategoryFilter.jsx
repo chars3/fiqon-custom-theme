@@ -133,10 +133,8 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       {/* Select mobile/tablet */}
-      <div
-        className="block md:hidden px-2 md:px-4 relative z-10 mb-4"
-        ref={dropdownRef}
-      >
+      <h3 className="text-text-100 font-sans font-[500]">POR CATEGORIA</h3>
+      <div className="block md:hidden relative z-10 mb-4" ref={dropdownRef}>
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
           className="w-full bg-gray-100 rounded-full px-4 py-2 flex justify-between items-center text-sm text-text-100 font-medium outline-none"
@@ -158,7 +156,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         </button>
 
         {dropdownOpen && (
-          <ul className="absolute left-0 right-0 mt-2 bg-white rounded-lg border border-gray-200 shadow-md overflow-x-hidden max-h-[300px] overflow-y-auto w-full">
+          <ul className="absolute left-0 right-0 mt-2 bg-white rounded-lg border border-gray-200 shadow-md max-h-[300px] overflow-y-auto overflow-x-hidden w-full">
             {categories.map((category) => (
               <li
                 key={category.id ?? "null"}
@@ -166,7 +164,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                   setSelectedCategory(category.id);
                   setDropdownOpen(false);
                 }}
-                className={`px-4 py-2 text-sm text-text-100 hover:bg-gray-100 cursor-pointer ${
+                className={`px-4 py-2 text-sm text-text-100 hover:bg-gray-100 cursor-pointer break-words ${
                   selectedCategory === category.id
                     ? "font-semibold text-primary"
                     : ""
@@ -215,7 +213,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
       {/* Grid de ferramentas */}
       <div className="flex flex-col md:w-3/4 w-full">
         {/* Mobile com scroll */}
-        <div className="md:hidden p-4 max-h-[500px] overflow-y-auto">
+        <div className="md:hidden p-4 max-h-[500px] overflow-y-auto overflow-x-hidden w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {renderTools()}
           </div>
