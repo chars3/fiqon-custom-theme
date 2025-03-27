@@ -16,7 +16,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
       try {
         const res = await fetch("http://fiqon-backup.local/wp-json/wp/v2/apps");
         const data = await res.json();
-        setAllTools(data); 
+        setAllTools(data);
       } catch (error) {
         console.error("Erro ao buscar ferramentas:", error);
       } finally {
@@ -31,14 +31,16 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("http://fiqon-backup.local/wp-json/wp/v2/app-category");
+        const res = await fetch(
+          "http://fiqon-backup.local/wp-json/wp/v2/app-category"
+        );
         const data = await res.json();
         setCategories([{ id: null, name: "Todas" }, ...data]);
       } catch (error) {
         console.error("Erro ao buscar categorias:", error);
       }
     };
-  
+
     fetchCategories();
   }, []);
 
@@ -123,7 +125,13 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
             <p className="col-span-5 text-center">Carregando ferramentas...</p>
           ) : tools.length > 0 ? (
             tools.map((tool, index) => (
-              <div key={index} className="text-center p-2">
+              <a
+                key={index}
+                href={tool.link}
+                className="text-center p-2 hover:opacity-90 transition-opacity"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src={tool.acf?.app_logo?.url || "https://placehold.co/122"}
                   alt={
@@ -134,7 +142,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
                 <p className="mt-2 text-text-100">
                   {tool.acf?.app_title || tool.title?.rendered}
                 </p>
-              </div>
+              </a>
             ))
           ) : (
             <p className="col-span-5 text-center">
