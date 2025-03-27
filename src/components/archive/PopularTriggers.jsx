@@ -59,7 +59,7 @@ const PopularTriggers = ({ triggers = tempTriggers }) => {
   }, []);
 
   return (
-    <div className="bg-[#F6F6F7] p-6 rounded-lg">
+    <div className="bg-[#F6F6F7] p-6 rounded-[20px]">
       {/* Título */}
       <h2 className="text-primary text-3xl font-bold flex items-center">
         Gatilhos populares <Zap className="ml-2" size={20} />
@@ -87,18 +87,18 @@ const PopularTriggers = ({ triggers = tempTriggers }) => {
         {triggers.map((trigger, index) => (
           <div
             key={index}
-            className="flex items-center bg-white p-4 pr-8 rounded-xl border border-stroke shadow-sm"
+            className="flex flex-col gap-4 md:flex-row md:items-center bg-white p-4 pr-8 rounded-xl border border-stroke shadow-sm"
           >
             <img
               src={trigger.icon}
               alt={trigger.name}
               className="w-20 h-20 rounded-md"
             />
-            <div className="ml-4 flex-1">
+            <div className="md:ml-4 flex-1">
               <p className="font-medium text-text-300">{trigger.name}</p>
               <p className="text-text-100 font-normal text-sm mt-2">{trigger.description}</p>
             </div>
-            <button className="border border-[#018562] text-[#018562] px-8 py-1 rounded-xl hover:bg-primary hover:text-white transition">
+            <button className="w-24 border border-[#018562] text-[#018562]  py-1 rounded-xl hover:bg-primary hover:text-white transition">
               Testar
             </button>
           </div>
