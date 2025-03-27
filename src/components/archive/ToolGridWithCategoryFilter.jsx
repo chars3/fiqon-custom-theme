@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 
 const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   const [categories, setCategories] = useState([]);
@@ -8,8 +8,22 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   const [categoryCounts, setCategoryCounts] = useState({});
   const [allTools, setAllTools] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Buscar apps
+  const dropdownRef = useRef();
+
+  // Fechar dropdown clicando fora
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Buscar ferramentas
   useEffect(() => {
     const fetchTools = async () => {
       setLoading(true);
@@ -23,7 +37,6 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         setLoading(false);
       }
     };
-
     fetchTools();
   }, []);
 
@@ -40,14 +53,12 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         console.error("Erro ao buscar categorias:", error);
       }
     };
-
     fetchCategories();
   }, []);
 
   // Contador de categorias
   useEffect(() => {
     const counts = {};
-
     allTools.forEach((app) => {
       if (Array.isArray(app["app-category"])) {
         app["app-category"].forEach((catId) => {
@@ -55,20 +66,18 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         });
       }
     });
-
     counts["all"] = allTools.length;
     setCategoryCounts(counts);
   }, [allTools]);
 
+  // Filtro por categoria e busca
   useEffect(() => {
     setLoading(true);
-
     let filtered = [...allTools];
 
     if (selectedCategory) {
-      filtered = filtered.filter(
-        (app) =>
-          app["app-category"] && app["app-category"].includes(selectedCategory)
+      filtered = filtered.filter((app) =>
+        app["app-category"]?.includes(selectedCategory)
       );
     }
 
@@ -87,10 +96,95 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     setLoading(false);
   }, [selectedCategory, searchQuery, allTools]);
 
+  // Render cards
+  const renderTools = () => {
+    if (loading) {
+      return (
+        <p className="col-span-full text-center">Carregando ferramentas...</p>
+      );
+    }
+    if (tools.length === 0) {
+      return (
+        <p className="col-span-full text-center">
+          Nenhuma ferramenta encontrada
+        </p>
+      );
+    }
+    return tools.map((tool, index) => (
+      <a
+        key={index}
+        href={tool.link}
+        className="text-center p-2 hover:opacity-90 transition-opacity"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={tool.acf?.app_logo?.url || "https://placehold.co/122"}
+          alt={tool.acf?.app_title || tool.title?.rendered || "Ferramenta"}
+          className="w-[120px] h-[120px] mx-auto object-contain"
+        />
+        <p className="mt-2 text-text-100">
+          {tool.acf?.app_title || tool.title?.rendered}
+        </p>
+      </a>
+    ));
+  };
+
   return (
-    <div className="flex gap-4">
-      {/* Filtro de Categoria */}
-      <div className="p-4 w-1/4">
+    <div className="flex flex-col md:flex-row gap-4">
+      {/* Select mobile/tablet */}
+      <div
+        className="block md:hidden px-2 md:px-4 relative z-10 mb-4"
+        ref={dropdownRef}
+      >
+        <button
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          className="w-full bg-gray-100 rounded-full px-4 py-2 flex justify-between items-center text-sm text-text-100 font-medium outline-none"
+        >
+          <span>
+            {categories.find((cat) => cat.id === selectedCategory)?.name ??
+              "Todas"}{" "}
+            (
+            {selectedCategory === null
+              ? categoryCounts["all"] || 0
+              : categoryCounts[selectedCategory] || 0}
+            )
+          </span>
+          {dropdownOpen ? (
+            <ChevronUp className="w-4 h-4 text-text-200" />
+          ) : (
+            <ChevronDown className="w-4 h-4 text-text-200" />
+          )}
+        </button>
+
+        {dropdownOpen && (
+          <ul className="absolute left-0 right-0 mt-2 bg-white rounded-lg border border-gray-200 shadow-md overflow-x-hidden max-h-[300px] overflow-y-auto w-full">
+            {categories.map((category) => (
+              <li
+                key={category.id ?? "null"}
+                onClick={() => {
+                  setSelectedCategory(category.id);
+                  setDropdownOpen(false);
+                }}
+                className={`px-4 py-2 text-sm text-text-100 hover:bg-gray-100 cursor-pointer ${
+                  selectedCategory === category.id
+                    ? "font-semibold text-primary"
+                    : ""
+                }`}
+              >
+                {category.name} (
+                {category.id === null
+                  ? categoryCounts["all"] || 0
+                  : categoryCounts[category.id] || 0}
+                )
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Lista lateral desktop */}
+      <div className="hidden md:block p-4 w-1/4">
         <h3 className="text-text-100 font-sans font-[500] mb-2 border-b border-stroke-green-200 pb-2">
           POR CATEGORIA
         </h3>
@@ -118,38 +212,21 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         </div>
       </div>
 
-      {/* Grid de Ferramentas */}
-      <div className="flex flex-col w-3/4">
-        <div className="grid grid-cols-5 gap-4 p-4 w-full">
-          {loading ? (
-            <p className="col-span-5 text-center">Carregando ferramentas...</p>
-          ) : tools.length > 0 ? (
-            tools.map((tool, index) => (
-              <a
-                key={index}
-                href={tool.link}
-                className="text-center p-2 hover:opacity-90 transition-opacity"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={tool.acf?.app_logo?.url || "https://placehold.co/122"}
-                  alt={
-                    tool.acf?.app_title || tool.title?.rendered || "Ferramenta"
-                  }
-                  className="w-[142px] h-[142px] mx-auto"
-                />
-                <p className="mt-2 text-text-100">
-                  {tool.acf?.app_title || tool.title?.rendered}
-                </p>
-              </a>
-            ))
-          ) : (
-            <p className="col-span-5 text-center">
-              Nenhuma ferramenta encontrada
-            </p>
-          )}
+      {/* Grid de ferramentas */}
+      <div className="flex flex-col md:w-3/4 w-full">
+        {/* Mobile com scroll */}
+        <div className="md:hidden p-4 max-h-[500px] overflow-y-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {renderTools()}
+          </div>
         </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:block p-4">
+          <div className="grid grid-cols-5 gap-4">{renderTools()}</div>
+        </div>
+
+        {/* Footer box */}
         <div className="bg-bg-light-green p-4 rounded-lg mt-4">
           <p className="font-bold text-text-300">
             Não encontrou a ferramenta que procura?
