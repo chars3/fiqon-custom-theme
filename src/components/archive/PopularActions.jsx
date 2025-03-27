@@ -3,27 +3,27 @@ import { Search, Settings } from "lucide-react";
 
 const tempActions = [
   {
-    icon: "https://via.placeholder.com/48",
+    icon: "https://placehold.co/48",
     name: "Lorem ipsum dolor sit amet",
     description: "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla."
   },
   {
-    icon: "https://via.placeholder.com/48",
+    icon: "https://placehold.co/48",
     name: "Lorem ipsum dolor sit amet",
     description: "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla."
   },
   {
-    icon: "https://via.placeholder.com/48",
+    icon: "https://placehold.co/48",
     name: "Lorem ipsum dolor sit amet",
     description: "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla."
   },
   {
-    icon: "https://via.placeholder.com/48",
+    icon: "https://placehold.co/48",
     name: "Lorem ipsum dolor sit amet",
     description: "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla."
   },
   {
-    icon: "https://via.placeholder.com/48",
+    icon: "https://placehold.co/48",
     name: "Lorem ipsum dolor sit amet",
     description: "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla."
   }
@@ -31,9 +31,9 @@ const tempActions = [
 
 const PopularActions = ({ actions = tempActions }) => {
   return (
-    <div className="bg-gray-100 p-6 rounded-lg">
+    <div className="bg-[#F6F6F7] p-6 rounded-lg">
       {/* Título */}
-      <h2 className="text-green-600 text-xl font-bold flex items-center">
+      <h2 className="text-primary text-3xl font-bold flex items-center">
         Ações populares <Settings className="ml-2" size={20} />
       </h2>
       
@@ -55,15 +55,15 @@ const PopularActions = ({ actions = tempActions }) => {
       </div> */}
       
       {/* Lista de ações */}
-      <div className="mt-4 space-y-3">
+      <div className="mt-6 space-y-3">
         {actions.map((action, index) => (
-          <div key={index} className="flex items-center bg-white p-4 rounded-lg shadow-sm">
-            <img src={action.icon} alt={action.name} className="w-12 h-12 rounded-md" />
+          <div key={index} className="flex items-center bg-white p-4 pr-8 rounded-xl border border-stroke shadow-sm">
+            <img src={action.icon} alt={action.name} className="w-20 h-20 rounded-md" />
             <div className="ml-4 flex-1">
-              <p className="font-bold text-gray-800">{action.name}</p>
-              <p className="text-gray-600 text-sm">{action.description}</p>
+              <p className="font-medium text-text-300">{action.name}</p>
+              <p className="text-text-100 font-normal text-sm mt-2">{action.description}</p>
             </div>
-            <button className="border border-green-600 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition">
+            <button className="border border-[#018562] text-[#018562] px-8 py-1 rounded-xl hover:bg-primary hover:text-white transition">
               Testar
             </button>
           </div>
