@@ -13,21 +13,21 @@ const SinglePost = ({ post }) => {
   console.log(acf.app_trigger);
 
   return (
-    <div className="bg-white px-16">
-      <section className="w-full flex justify-center pb-10">
-        <div className="w-full flex flex-col">
+    <div className="bg-white">
+      <section className="w-full flex justify-center pb-10 ">
+        <div className="w-full flex flex-col ">
           <HeroSinglePost post={post} />
         </div>
       </section>
       {/* Section veja as possibilidades  */}
       <section className="w-full flex justify-center pb-10">
-        <div className="max-w-[1280px] w-full flex flex-col">
+        <div className="max-w-[1280px] w-full flex flex-col px-[24px] md:px-[40px] xl:px-[60px]">
           <Possibilities />
         </div>
       </section>
       {/* Section Conecte qualquer ferramenta  */}
       <section className="w-full flex justify-center pb-10">
-        <div className="max-w-[1280px] w-full flex flex-col">
+        <div className="max-w-[1280px] w-full flex flex-col px-[24px] md:px-[40px] xl:px-[60px]">
           <ConnectTools />
         </div>
       </section>
@@ -39,7 +39,7 @@ const SinglePost = ({ post }) => {
       </section> */}
       {/* Section FAQ  */}
       <section className="w-full flex justify-center py-10">
-        <div className="max-w-[1200px] w-full flex flex-col">
+        <div className="max-w-[1200px] w-full flex flex-col px-[24px] md:px-[40px] xl:px-[60px]">
           <FAQ />
         </div>
       </section>

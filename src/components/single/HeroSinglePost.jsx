@@ -6,7 +6,7 @@ const HeroSinglePost = ({ post }) => {
 
   return (
     <div className="bg-gradient-to-r from-green-100 to-gray-100 pt-16 pb-24 flex items-center justify-center">
-      <div className="w-full max-w-[1280px] flex justify-between">
+      <div className="w-full max-w-[1280px] flex flex-col md:flex-rol justify-between px-[24px] md:px-[40px] xl:px-[60px]">
         {/* Texto e chamada para ação */}
         <div className="max-w-xl">
           <h1 className="text-[32px] leading-[48px] font-bold text-text-300">
