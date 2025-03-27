@@ -9,25 +9,25 @@ const HeroSinglePost = ({ post }) => {
       <div className="w-full max-w-[1280px] flex justify-between">
         {/* Texto e chamada para ação */}
         <div className="max-w-xl">
-          <h1 className="text-3xl font-bold text-gray-900">
-            Integrar o <span className="text-green-600">{acf.app_title}</span>{" "}
+          <h1 className="text-[32px] leading-[48px] font-bold text-text-300">
+            Integrar o <span className="text-primary">{acf.app_title}</span>{" "}
             aos seus sistemas nunca foi tão simples!
           </h1>
-          <p className="text-gray-700 mt-4">
+          <p className="text-text-200 mt-4">
             Integre agora o {acf.app_title} com seus demais sistemas e coloque
             tarefas no piloto automático! Plataforma gratuita. Webhooks
             gratuitos.
           </p>
 
           {/* Botão */}
-          <button className="cursor-pointer mt-6 w-[464px] bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
+          <button className="cursor-pointer mt-10 w-[464px] bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
             Integrar {acf.app_title}
           </button>
 
           {/* Benefícios */}
-          <div className="flex items-center mt-4 space-x-6 text-gray-600 text-sm">
+          <div className="flex items-center mt-6 space-x-6 text-text-100 text-sm">
             <span className="flex items-center">
-              <Rocket className="text-green-600 mr-2" size={18} />É
+              <Rocket className="text-text-100 mr-2" size={18} />É
               gratuito, por tempo ilimitado
             </span>
             <span className="flex items-center">
