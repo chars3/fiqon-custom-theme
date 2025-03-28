@@ -49,7 +49,8 @@ function render_app_actions_metabox($post)
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('add-action').addEventListener('click', function() {
                 let container = document.getElementById('app-actions-container');
-                let index = container.children.length;
+                let index = Date.now();
+
                 let div = document.createElement('div');
                 div.className = 'app-action';
                 div.innerHTML = `
@@ -166,10 +167,10 @@ function save_app_actions($post_id)
         $actions = [];
 
         foreach ($_POST['app_actions'] as $action) {
-            if (!empty($action['title']) && !empty($action['description'])) {
+            if (!empty($action['title'])) {
                 $actions[] = [
                     'title'       => sanitize_text_field($action['title']),
-                    'description' => sanitize_textarea_field($action['description']),
+                    'description' => sanitize_textarea_field($action['description'] ?? ''),
                 ];
             }
         }

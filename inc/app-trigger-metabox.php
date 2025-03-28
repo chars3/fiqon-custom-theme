@@ -49,14 +49,15 @@ function render_app_trigger_metabox($post)
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('add-trigger').addEventListener('click', function() {
                 let container = document.getElementById('app-trigger-container');
-                let index = container.children.length;
+                let index = Date.now(); // garante unicidade
+
                 let div = document.createElement('div');
                 div.className = 'app-trigger';
                 div.innerHTML = `
-                <input type="text" class="trigger-title" name="app_trigger[\${index}][title]" placeholder="Título">
-                <textarea class="trigger-desc" name="app_trigger[\${index}][description]" placeholder="Descrição"></textarea>
-                <button type="button" class="remove-trigger">✖</button>
-            `;
+                    <input type="text" class="trigger-title" name="app_trigger[${index}][title]" placeholder="Título">
+                    <textarea class="trigger-desc" name="app_trigger[${index}][description]" placeholder="Descrição"></textarea>
+                    <button type="button" class="remove-trigger">✖</button>
+                `;
                 container.appendChild(div);
 
                 div.style.opacity = '0';
