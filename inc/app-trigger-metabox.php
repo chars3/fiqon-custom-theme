@@ -166,10 +166,10 @@ function save_app_trigger($post_id)
         $triggers = [];
 
         foreach ($_POST['app_trigger'] as $trigger) {
-            if (!empty($trigger['title']) && !empty($trigger['description'])) {
+            if (!empty($trigger['title'])) {
                 $triggers[] = [
                     'title'       => sanitize_text_field($trigger['title']),
-                    'description' => sanitize_textarea_field($trigger['description']),
+                    'description' => sanitize_textarea_field($trigger['description'] ?? ''),
                 ];
             }
         }
