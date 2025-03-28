@@ -20,7 +20,7 @@ const Hero = () => {
       ></div>
 
       {/* Conteúdo do Hero */}
-      <div className="relative z-10 flex h-full items-center justify-center px-6">
+      <div className="relative flex h-full items-center justify-center px-6">
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-[40px] font-bold text-text-300">
             Lorem ipsum dolor sit amet consectetur.{" "}
