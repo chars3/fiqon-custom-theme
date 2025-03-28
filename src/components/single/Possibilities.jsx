@@ -112,7 +112,7 @@ const Possibilities = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-4 mt-6 text-left">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 text-left">
         {loading ? (
           <p className="col-span-3 text-center text-gray-500">Carregando...</p>
         ) : (
