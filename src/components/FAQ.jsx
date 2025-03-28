@@ -8,19 +8,19 @@ const faqs = [
   },
   {
     question: "Quantas ações eu preciso?",
-    answer: "Depende do seu fluxo de automação e necessidades específicas.",
+    answer: "Isso varia conforme a quantidade de integrações criadas dentro da plataforma e o volume de dados que serão movimentados entre elas.",
   },
   {
-    question: "O que é uma ação?",
-    answer: "Uma ação é um evento que ocorre dentro da plataforma, podendo ser um disparo, uma automação ou uma integração.",
+    question: "O que é uma operação?",
+    answer: "É a resposta executada em um sistema após um gatilho ser acionado. Por exemplo, quando um evento ocorre em um sistema de origem, a operação é a tarefa realizada no sistema de destino, como enviar dados, criar um registro ou atualizar informações.",
   },
   {
     question: "O que é um middleware?",
-    answer: "Middleware é um software que atua como um intermediário entre sistemas, facilitando a comunicação entre eles.",
+    answer: "É um software que atua como um intermediário, permitindo que diferentes sistemas ou aplicações se comuniquem e troquem dados entre si, facilitando a integração.",
   },
   {
     question: "O que é um gatilho?",
-    answer: "Um gatilho é um evento que inicia uma automação, podendo ser uma ação específica dentro de um software integrado.",
+    answer: "É o evento que inicia uma automação em uma integração, como uma mudança em um sistema que aciona outra ação em um sistema integrado.",
   }
 ];
 
