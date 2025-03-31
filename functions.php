@@ -142,8 +142,16 @@ function enqueue_react_scripts() {
 add_action( 'wp_enqueue_scripts', 'enqueue_react_scripts' );
 
 
-require_once get_template_directory() . '/inc/app-actions-metabox.php';
-require_once get_template_directory() . '/inc/app-trigger-metabox.php';
+$actions_path = get_stylesheet_directory() . '/inc/app-actions-metabox.php';
+if (file_exists($actions_path)) {
+    require_once $actions_path;
+}
+
+$trigger_path = get_stylesheet_directory() . '/inc/app-trigger-metabox.php';
+if (file_exists($trigger_path)) {
+    require_once $trigger_path;
+}
+
 
 
 

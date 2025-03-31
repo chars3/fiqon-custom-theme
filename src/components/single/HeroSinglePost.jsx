@@ -20,7 +20,7 @@ const HeroSinglePost = ({ post }) => {
           </p>
 
           {/* Botão */}
-          <button className="cursor-pointer mt-10 w-full md:w-[464px] bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
+          <button className="cursor-pointer border-none mt-10 w-full md:w-[464px] bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
             Integrar {acf.app_title}
           </button>
 

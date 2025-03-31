@@ -9,7 +9,7 @@ const AppFilterByCategory = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await fetch("http://fiqon-backup.local/wp-json/wp/v2/app-category");
+                const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/app-category");
                 const data = await res.json();
                 setCategories(data);
             } catch (error) {
@@ -24,7 +24,7 @@ const AppFilterByCategory = () => {
         if (selectedCategory) {
             const fetchAppsByCategory = async () => {
                 try {
-                    const res = await fetch(`http://fiqon-backup.local/wp-json/wp/v2/apps`);
+                    const res = await fetch(`https://fiqon.com.br/wp-json/wp/v2/apps`);
                     const data = await res.json();
 
                     // Filtra os apps que possuem a categoria selecionada

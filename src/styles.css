@@ -9,3 +9,9 @@ body {
   @apply font-sans text-text-300;
   overflow-x: hidden;
 }
+
+input {
+  border: transparent !important;
+  padding: 0 !important;
+}
+

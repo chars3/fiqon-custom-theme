@@ -8,7 +8,7 @@ const SearchBar = ({ onSearch }) => {
           <input
               type="text"
               placeholder="Buscar ferramenta"
-              className="w-full bg-transparent outline-none px-2 text-gray-700"
+              className="w-full bg-transparent outline-none px-2 text-gray-700 border-none"
               onChange={(e) => onSearch(e.target.value)}
           />
       </div>

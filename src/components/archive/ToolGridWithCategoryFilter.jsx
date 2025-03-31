@@ -28,7 +28,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     const fetchTools = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://fiqon-backup.local/wp-json/wp/v2/apps");
+        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
         const data = await res.json();
         setAllTools(data);
       } catch (error) {
@@ -45,7 +45,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     const fetchCategories = async () => {
       try {
         const res = await fetch(
-          "http://fiqon-backup.local/wp-json/wp/v2/app-category"
+          "https://fiqon.com.br/wp-json/wp/v2/app-category"
         );
         const data = await res.json();
         setCategories([{ id: null, name: "Todas" }, ...data]);
