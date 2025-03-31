@@ -9,7 +9,7 @@ const HeroSinglePost = ({ post }) => {
       <div className="w-full max-w-[1280px] flex flex-col md:flex-row justify-between px-[24px] md:px-[40px] xl:px-[60px]">
         {/* Texto e chamada para ação */}
         <div className="max-w-xl">
-          <h1 className="text-3xl md:text-[40px] font-bold text-text-300 text-center md:text-left">
+          <h1 className="text-3xl md:leading-[48px] md:text-[40px] font-bold text-text-300 text-center md:text-left">
             Integrar o <span className="text-primary">{acf.app_title}</span>{" "}
             aos seus sistemas nunca foi tão simples!
           </h1>
