@@ -28,8 +28,25 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     const fetchTools = async () => {
       setLoading(true);
       try {
-        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
-        const data = await res.json();
+        const res = await fetch(
+          "https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100"
+        );
+        let data = await res.json();
+
+        data.sort((a, b) => {
+          const nameA = (
+            a.acf?.app_title ||
+            a.title?.rendered ||
+            ""
+          ).toLowerCase();
+          const nameB = (
+            b.acf?.app_title ||
+            b.title?.rendered ||
+            ""
+          ).toLowerCase();
+          return nameA.localeCompare(nameB);
+        });
+
         setAllTools(data);
       } catch (error) {
         console.error("Erro ao buscar ferramentas:", error);
@@ -133,7 +150,9 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       {/* Select mobile/tablet */}
-      <h3 className="md:hidden text-text-100 font-sans font-[500]">POR CATEGORIA</h3>
+      <h3 className="md:hidden text-text-100 font-sans font-[500]">
+        POR CATEGORIA
+      </h3>
       <div className="block md:hidden relative z-10 mb-4" ref={dropdownRef}>
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
