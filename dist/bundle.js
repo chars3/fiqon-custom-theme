@@ -30375,6 +30375,8 @@ var ConnectTools = function ConnectTools() {
                   icon: ((_app$acf2 = app.acf) === null || _app$acf2 === void 0 || (_app$acf2 = _app$acf2.app_logo) === null || _app$acf2 === void 0 ? void 0 : _app$acf2.url) || "https://placehold.co/64",
                   link: app.link || "#"
                 };
+              }).sort(function (a, b) {
+                return a.name.localeCompare(b.name);
               });
               setTools(formattedTools);
               setFilteredTools(formattedTools);
