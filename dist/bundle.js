@@ -30078,22 +30078,28 @@ var ToolGridWithCategoryFilter = function ToolGridWithCategoryFilter(_ref) {
               return res.json();
             case 7:
               data = _context.sent;
+              data.sort(function (a, b) {
+                var _a$acf, _a$title, _b$acf, _b$title;
+                var nameA = (((_a$acf = a.acf) === null || _a$acf === void 0 ? void 0 : _a$acf.app_title) || ((_a$title = a.title) === null || _a$title === void 0 ? void 0 : _a$title.rendered) || "").toLowerCase();
+                var nameB = (((_b$acf = b.acf) === null || _b$acf === void 0 ? void 0 : _b$acf.app_title) || ((_b$title = b.title) === null || _b$title === void 0 ? void 0 : _b$title.rendered) || "").toLowerCase();
+                return nameA.localeCompare(nameB);
+              });
               setAllTools(data);
-              _context.next = 14;
+              _context.next = 15;
               break;
-            case 11:
-              _context.prev = 11;
+            case 12:
+              _context.prev = 12;
               _context.t0 = _context["catch"](1);
               console.error("Erro ao buscar ferramentas:", _context.t0);
-            case 14:
-              _context.prev = 14;
+            case 15:
+              _context.prev = 15;
               setLoading(false);
-              return _context.finish(14);
-            case 17:
+              return _context.finish(15);
+            case 18:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 11, 14, 17]]);
+        }, _callee, null, [[1, 12, 15, 18]]);
       }));
       return function fetchTools() {
         return _ref2.apply(this, arguments);

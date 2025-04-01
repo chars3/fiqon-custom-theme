@@ -30,11 +30,13 @@ const ConnectTools = () => {
           setAppLogo(logo);
         }
 
-        const formattedTools = data.map((app) => ({
-          name: app.acf?.app_title || app.title?.rendered || "Sem nome",
-          icon: app.acf?.app_logo?.url || "https://placehold.co/64",
-          link: app.link || "#",
-        }));
+        const formattedTools = data
+          .map((app) => ({
+            name: app.acf?.app_title || app.title?.rendered || "Sem nome",
+            icon: app.acf?.app_logo?.url || "https://placehold.co/64",
+            link: app.link || "#",
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name));
 
         setTools(formattedTools);
         setFilteredTools(formattedTools);
@@ -68,7 +70,11 @@ const ConnectTools = () => {
           className="w-24 md:w-[140px] md:h-[140px] object-contain"
         />
         {/* <ArrowRight className="w-8 h-8 text-gray-500" /> */}
-        <img className="w-14 md:w-32" src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png" alt="Seta" />
+        <img
+          className="w-14 md:w-32"
+          src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png"
+          alt="Seta"
+        />
         {selectedTool ? (
           <a href={selectedTool.link}>
             <img
