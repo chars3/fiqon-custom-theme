@@ -32,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full mx-auto p-6">
+    <div className="w-full mx-auto md:p-6">
       <h2 className="text-center text-[32px] font-bold text-text-200">Perguntas frequentes</h2>
       <div className="mt-10">
         {faqs.map((faq, index) => (
