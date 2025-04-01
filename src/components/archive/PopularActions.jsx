@@ -60,7 +60,7 @@ const PopularActions = ({ actions = tempActions }) => {
                 {action.description}
               </p>
             </div>
-            <button className="w-24 border border-[#018562] text-[#018562] py-1 rounded-xl hover:bg-primary hover:text-white transition">
+            <button className="w-24 border border-[#018562] text-[#018562] py-1 rounded-xl hover:bg-primary focus:bg-primary hover:text-white transition">
               Testar
             </button>
           </div>

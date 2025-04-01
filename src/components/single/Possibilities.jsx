@@ -92,8 +92,8 @@ const Possibilities = () => {
               <button
                 className={`text-sm md:text-base flex justify-center items-center cursor-pointer px-4 py-2 rounded-xl ${
                   activeTab === "triggers"
-                    ? "bg-text-green text-white border-[#008A35] hover:bg-text-green"
-                    : "border border-[#018562] bg-white text-[#018562] hover:bg-[#E5F3EA]"
+                    ? "bg-text-green focus:bg-text-green text-white border-[#008A35] hover:bg-text-green"
+                    : "border border-[#018562] bg-white text-[#018562] hover:bg-[#E5F3EA] hover:text-text-green focus:outline-none"
                 }`}
                 onClick={() => setActiveTab("triggers")}
               >
@@ -104,8 +104,8 @@ const Possibilities = () => {
               <button
                 className={`text-sm md:text-base flex justify-center items-center cursor-pointer px-4 py-2 rounded-xl ${
                   activeTab === "actions"
-                    ? "bg-green-600 text-white"
-                    : "border border-[#018562] bg-white text-[#018562] hover:bg-[#E5F3EA]"
+                    ? "bg-text-green focus:bg-text-green text-white border-[#008A35] hover:bg-text-green"
+                    : "border border-[#018562] bg-white text-[#018562] hover:bg-[#E5F3EA] hover:text-text-green focus:outline-none"
                 }`}
                 onClick={() => setActiveTab("actions")}
               >

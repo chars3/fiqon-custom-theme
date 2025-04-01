@@ -45,7 +45,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     const fetchCategories = async () => {
       try {
         const res = await fetch(
-          "https://fiqon.com.br/wp-json/wp/v2/app-category"
+          "https://fiqon.com.br/wp-json/wp/v2/app-category?per_page=100"
         );
         const data = await res.json();
         setCategories([{ id: null, name: "Todas" }, ...data]);
@@ -137,7 +137,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
       <div className="block md:hidden relative z-10 mb-4" ref={dropdownRef}>
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="w-full bg-white rounded-full border border-stroke px-4 py-4 flex justify-between items-center text-sm text-text-100 font-medium outline-none"
+          className="w-full bg-white rounded-full border border-stroke px-4 py-4 flex justify-between items-center text-sm text-text-100 font-medium outline-none hover:text-text-100 hover:bg-white focus:bg-white focus:text-text-100"
         >
           <span>
             {categories.find((cat) => cat.id === selectedCategory)?.name ??
@@ -156,7 +156,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         </button>
 
         {dropdownOpen && (
-          <ul className="absolute left-0 right-0 mt-2 bg-white rounded-lg border border-gray-200 shadow-md max-h-[300px] overflow-y-auto overflow-x-hidden w-full">
+          <ul className="absolute left-0 right-0 mt-2 bg-white rounded-lg border border-stroke shadow-md max-h-[300px] overflow-y-auto overflow-x-hidden w-full">
             {categories.map((category) => (
               <li
                 key={category.id ?? "null"}

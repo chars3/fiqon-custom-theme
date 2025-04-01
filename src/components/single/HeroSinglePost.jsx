@@ -10,8 +10,8 @@ const HeroSinglePost = ({ post }) => {
         {/* Texto e chamada para ação */}
         <div className="max-w-xl">
           <h1 className="text-3xl md:leading-[48px] md:text-[40px] font-bold text-text-300 text-center md:text-left">
-            Integrar o <span className="text-primary">{acf.app_title}</span>{" "}
-            aos seus sistemas nunca foi tão simples!
+            Integrar o <span className="text-primary">{acf.app_title}</span> aos
+            seus sistemas nunca foi tão simples!
           </h1>
           <p className="text-text-200 mt-8 md:mt-4 text-center md:text-left">
             Integre agora o {acf.app_title} com seus demais sistemas e coloque
@@ -20,15 +20,17 @@ const HeroSinglePost = ({ post }) => {
           </p>
 
           {/* Botão */}
-          <button className="cursor-pointer border-none mt-10 w-full md:w-[464px] bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
-            Integrar {acf.app_title}
-          </button>
+          <a href="https://fiqon.app/" target="_blank">
+            <button className="cursor-pointer border-none mt-10 w-full md:w-[464px] bg-green-600 focus:bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition">
+              Integrar {acf.app_title}
+            </button>
+          </a>
 
           {/* Benefícios */}
           <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center mt-8 md:mt-6 text-text-100 text-sm">
             <span className="flex items-center">
-              <Rocket className="text-text-100 mr-2" size={18} />É
-              gratuito, por tempo ilimitado
+              <Rocket className="text-text-100 mr-2" size={18} />É gratuito, por
+              tempo ilimitado
             </span>
             <span className="flex items-center">
               <CreditCard className="text-gray-600 mr-2" size={18} />

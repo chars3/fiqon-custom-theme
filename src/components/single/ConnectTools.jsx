@@ -65,7 +65,7 @@ const ConnectTools = () => {
         <img
           src={appLogo || "https://placehold.co/80"}
           alt={appName}
-          className="w-20 md:w-[140px] md:h-[140px] object-contain"
+          className="w-24 md:w-[140px] md:h-[140px] object-contain"
         />
         {/* <ArrowRight className="w-8 h-8 text-gray-500" /> */}
         <img className="w-14 md:w-32" src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png" alt="Seta" />
@@ -74,7 +74,7 @@ const ConnectTools = () => {
             <img
               src={selectedTool.icon}
               alt={selectedTool.name}
-              className="w-20 md:w-[140px] md:h-[140px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
+              className="w-24 md:w-[140px] md:h-[140px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
             />
           </a>
         ) : (

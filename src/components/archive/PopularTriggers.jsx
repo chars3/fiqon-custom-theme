@@ -98,7 +98,7 @@ const PopularTriggers = ({ triggers = tempTriggers }) => {
               <p className="font-medium text-text-300">{trigger.name}</p>
               <p className="text-text-100 font-normal text-sm mt-2">{trigger.description}</p>
             </div>
-            <button className="w-24 border border-[#018562] text-[#018562]  py-1 rounded-xl hover:bg-primary hover:text-white transition">
+            <button className="w-24 border border-[#018562] text-[#018562]  py-1 rounded-xl hover:bg-primary focus:bg-primary hover:text-white transition">
               Testar
             </button>
           </div>
