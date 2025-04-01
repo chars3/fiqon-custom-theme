@@ -153,6 +153,20 @@ if (file_exists($trigger_path)) {
 }
 
 
+// SEO title e meta description para archive do CPT "app"
+add_filter('pre_get_document_title', function ($title) {
+  if (is_post_type_archive('app')) {
+    return 'Todos os Apps - FiqOn';
+  }
+  return $title;
+});
+
+add_action('wp_head', function () {
+  if (is_post_type_archive('app')) {
+    echo '<meta name="description" content="Descubra todos os aplicativos disponíveis no FiqOn e conecte suas ferramentas favoritas.">';
+  }
+});
+
 
 
 

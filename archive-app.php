@@ -1,4 +1,15 @@
 <?php
+// SEO: título e descrição personalizados
+function custom_archive_meta_tags() {
+    ?>
+    <title>Integrações com a Fiqon</title>
+    <meta name="description" content="Explore nossas ferramentas conectáveis e descubra possibilidades incríveis de automações entre apps.">
+    <?php
+}
+add_action('wp_head', 'custom_archive_meta_tags');
+?>
+
+<?php
 // Se tiver query default do WordPress, use o loop padrão
 $posts_array = array();
 
@@ -14,11 +25,9 @@ if ( have_posts() ) {
             'acf'     => get_fields($post_id), // pega todos os campos ACF
         );
     }
-    // Recoloca o pointer do loop ao final
     wp_reset_postdata();
 }
 
-// Agora você tem um array de posts completo
 $data = array(
     'posts' => $posts_array,
 );
@@ -28,5 +37,5 @@ wp_localize_script('meu-react-app', 'wpData', $data);
 ?>
 
 <?php get_header(); ?>
-<div id="root"></div> <!-- React renderizará aqui -->
+<div id="root"></div>
 <?php get_footer(); ?>

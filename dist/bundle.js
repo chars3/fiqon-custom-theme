@@ -30350,7 +30350,7 @@ var ConnectTools = function ConnectTools() {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
+              return fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
             case 3:
               res = _context.sent;
               _context.next = 6;
