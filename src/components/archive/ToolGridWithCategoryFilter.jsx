@@ -28,7 +28,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
     const fetchTools = async () => {
       setLoading(true);
       try {
-        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
+        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
         const data = await res.json();
         setAllTools(data);
       } catch (error) {

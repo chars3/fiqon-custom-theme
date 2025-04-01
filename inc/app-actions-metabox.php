@@ -35,7 +35,7 @@ function render_app_actions_metabox($post)
     wp_nonce_field(basename(__FILE__), 'app_actions_nonce');
 ?>
     <div id="app-actions-container">
-        <?php foreach ($actions as $index => $action) : ?>
+        <?php foreach (array_values($actions) as $index => $action) : ?>
             <div class="app-action">
                 <input type="text" class="action-title" name="app_actions[<?php echo $index; ?>][title]" value="<?php echo esc_attr($action['title']); ?>" placeholder="Título">
                 <textarea class="action-desc" name="app_actions[<?php echo $index; ?>][description]" placeholder="Descrição"><?php echo esc_textarea($action['description']); ?></textarea>
@@ -54,7 +54,7 @@ function render_app_actions_metabox($post)
                 let div = document.createElement('div');
                 div.className = 'app-action';
                 div.innerHTML = `
-                <input type="text" class="action-title" name="app_actions[\${index}][title]" placeholder="Título">
+                <input type="text" class="action-title" name="app_actions[${index}][title]" placeholder="Título">
                 <textarea class="action-desc" name="app_actions[\${index}][description]" placeholder="Descrição"></textarea>
                 <button type="button" class="remove-action">✖</button>
             `;

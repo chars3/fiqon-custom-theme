@@ -30071,7 +30071,7 @@ var ToolGridWithCategoryFilter = function ToolGridWithCategoryFilter(_ref) {
               setLoading(true);
               _context.prev = 1;
               _context.next = 4;
-              return fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
+              return fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
             case 4:
               res = _context.sent;
               _context.next = 7;
