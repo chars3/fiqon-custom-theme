@@ -65,29 +65,29 @@ const ConnectTools = () => {
         <img
           src={appLogo || "https://placehold.co/80"}
           alt={appName}
-          className="w-[140px] h-[140px] object-contain"
+          className="w-20 md:w-[140px] md:h-[140px] object-contain"
         />
         {/* <ArrowRight className="w-8 h-8 text-gray-500" /> */}
-        <img src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png" alt="Seta" />
+        <img className="w-14 md:w-32" src="https://fiqon.com.br/wp-content/uploads/2025/03/Group-48095517.png" alt="Seta" />
         {selectedTool ? (
           <a href={selectedTool.link}>
             <img
               src={selectedTool.icon}
               alt={selectedTool.name}
-              className="w-[140px] h-[140px] transition-all duration-200 ease-out scale-100 opacity-100"
+              className="w-20 md:w-[140px] md:h-[140px] object-contain transition-all duration-200 ease-out scale-100 opacity-100"
             />
           </a>
         ) : (
           <img
             src="https://fiqon.com.br/wp-content/uploads/2025/03/Mask-group.png"
             alt="Adicionar"
-            className="w-[140px] h-[140px] object-contain"
+            className="w-20 md:w-[140px] md:h-[140px] object-contain"
           />
         )}
       </div>
 
       {/* Barra de busca */}
-      <div className="flex justify-center mt-6 px-8">
+      <div className="flex justify-center mt-6 md:px-8">
         <div className="flex items-center border border-[#E3EAE5] bg-bg-light-green rounded-full px-4 py-3 w-full shadow-sm">
           <Search className="text-gray-400" size={20} />
           <input
