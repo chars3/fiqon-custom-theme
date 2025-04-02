@@ -9,7 +9,7 @@ const ToolGrid = ({ selectedCategory, searchQuery }) => {
       const fetchTools = async () => {
           setLoading(true);
           try {
-              const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
+              const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
               const data = await res.json();
 
               let filteredTools = data;

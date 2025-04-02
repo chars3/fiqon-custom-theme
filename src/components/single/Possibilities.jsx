@@ -11,7 +11,7 @@ const Possibilities = () => {
     const fetchAppData = async () => {
       setLoading(true);
       try {
-        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps");
+        const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100");
         const data = await res.json();
 
         const slug = window.location.pathname.split("/").filter(Boolean).pop();

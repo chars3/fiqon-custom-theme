@@ -6,7 +6,7 @@ const CategoryFilter = ({ onSelectCategory }) => {
   useEffect(() => {
       const fetchCategories = async () => {
           try {
-              const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/app-category");
+              const res = await fetch("https://fiqon.com.br/wp-json/wp/v2/app-category?per_page=100");
               const data = await res.json();
               setCategories([{ id: null, name: "Todas" }, ...data]);
           } catch (error) {

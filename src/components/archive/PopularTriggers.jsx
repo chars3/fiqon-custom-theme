@@ -39,7 +39,7 @@ const PopularTriggers = ({ triggers = tempTriggers }) => {
     const fetchApps = async () => {
       try {
         const appsRes = await fetch(
-          "https://fiqon.com.br/wp-json/wp/v2/apps"
+          "https://fiqon.com.br/wp-json/wp/v2/apps?per_page=100"
         );
         const appsData = await appsRes.json();
 
