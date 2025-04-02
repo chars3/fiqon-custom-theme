@@ -76,6 +76,7 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
   // Contador de categorias
   useEffect(() => {
     const counts = {};
+  
     allTools.forEach((app) => {
       if (Array.isArray(app["app-category"])) {
         app["app-category"].forEach((catId) => {
@@ -83,8 +84,17 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         });
       }
     });
+  
     counts["all"] = allTools.length;
     setCategoryCounts(counts);
+  
+    // 🔽 Filtra categorias com base nos counts (exceto a categoria "Todas")
+    setCategories((prevCategories) => {
+      const filtered = prevCategories.filter((cat) =>
+        cat.id === null || counts[cat.id] > 0
+      );
+      return filtered;
+    });
   }, [allTools]);
 
   // Filtro por categoria e busca
@@ -132,7 +142,6 @@ const ToolGridWithCategoryFilter = ({ searchQuery }) => {
         key={index}
         href={tool.link}
         className="text-center p-2 hover:opacity-90 transition-opacity"
-        target="_blank"
         rel="noopener noreferrer"
       >
         <img
