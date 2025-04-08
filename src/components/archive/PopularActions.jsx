@@ -3,34 +3,46 @@ import { Search, Settings } from "lucide-react";
 
 const tempActions = [
   {
-    icon: "https://placehold.co/48",
-    name: "Lorem ipsum dolor sit amet",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/SHEETS.png",
+    name: "Adicionar linha na planilha",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Acrescenta uma linha com valores no final da planilha do Google Sheets.",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Lorem ipsum dolor sit amet",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/Z-API-1.png",
+    name: "Enviar texto simples",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Envie textos simples via WhatsApp! Você pode incrementá-los utilizando a formatação de texto e emojis.",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Lorem ipsum dolor sit amet",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/Z-API-1.png",
+    name: "Enviar áudio",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Ação responsável por enviar áudios para os seus chats no WhatsApp.",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Lorem ipsum dolor sit amet",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/GPT.png",
+    name: "Criar uma Thread",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Cria uma thread para conversa com assistente do ChatGPT.",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Lorem ipsum dolor sit amet",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/CLICKUP-1.png",
+    name: "Criar tarefa",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Criar uma tarefa no ClickUp.",
+  },
+  {
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/EVOLUTION-API-1.png",
+    name: "Enviar Anexo",
+    description:
+      "Ação que envia anexos para um contato no WhatsApp.",
+  },
+  {
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/ASAAS.png",
+    name: "Atualizar cadastro do cliente",
+    description:
+      "Ação que atualiza o cadastro de um cliente no Asaas.",
   },
 ];
 
@@ -61,7 +73,7 @@ const PopularActions = ({ actions = tempActions }) => {
               </p>
             </div>
             <button className="w-24 border border-[#018562] text-[#018562] py-1 rounded-xl hover:bg-primary focus:bg-primary hover:text-white transition">
-              Testar
+              <a href="https://fiqon.app/">Testar</a>
             </button>
           </div>
         ))}
