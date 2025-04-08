@@ -7,7 +7,8 @@ const Hero = () => {
       <div
         className="block md:hidden absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://fiqon.com.br/wp-content/uploads/2025/03/hero-archive-bg.png')"
+          backgroundImage:
+            "url('https://fiqon.com.br/wp-content/uploads/2025/03/hero-archive-bg.png')",
         }}
       ></div>
 
@@ -15,7 +16,8 @@ const Hero = () => {
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://fiqon.com.br/wp-content/uploads/2025/03/Frame-48096813-2.png')"
+          backgroundImage:
+            "url('https://fiqon.com.br/wp-content/uploads/2025/03/Frame-48096813-2.png')",
         }}
       ></div>
 
@@ -23,13 +25,11 @@ const Hero = () => {
       <div className="relative flex h-full items-center justify-center px-6">
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-[40px] font-bold text-text-300">
-            Lorem ipsum dolor sit amet consectetur.{" "}
-            <span className="text-primary">In urna.</span>
+            Conecte seus sistemas em poucos cliques{" "}
           </h1>
           <p className="mt-8 text-text-100 text-sm md:text-lg">
-            Lorem ipsum dolor sit amet consectetur. Magna ut vitae sem nunc
-            odio id turpis ut. Nibh etiam eu magnis est cras phasellus amet
-            sed.
+            Deixe seus processos Online integrando suas ferramentas favoritas de
+            forma fácil e rápida usando a FiqOn.
           </p>
         </div>
       </div>
