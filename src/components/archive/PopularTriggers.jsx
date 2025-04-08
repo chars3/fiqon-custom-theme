@@ -3,34 +3,40 @@ import { Search, ArrowRight, Zap } from "lucide-react";
 
 const tempTriggers = [
   {
-    icon: "https://placehold.co/48",
-    name: "Nova requisição",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/WEBHOOK.png",
+    name: "Webhook",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "O Webhook é um dos gatilhos mais versáteis, permitindo que sua integração seja ativada sempre que um evento específico ocorre em outro sistema",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Nova requisição",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/AGENDAMENTO.png",
+    name: "Agendamento",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "O gatilho de Agendamento é ideal para integrações que precisam ser executadas em intervalos regulares, sem depender de eventos externos.",
   },
   {
-    icon: "https://placehold.co/48",
-    name: "Nova requisição",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/EVOLUTION-API.png",
+    name: "Evolution Api ",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Construa integrações com base em eventos específicos dentro do Evolution Api, através de configurações diretas e rápidas.",
   },
   {
-    icon: "https://placehold.co/48",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/META.png",
     name: "Nova requisição",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Este gatilho é ativado toda vez que um novo lead é gerado através de um formulário de leads associado a uma página no Meta Ads.",
   },
   {
-    icon: "https://placehold.co/80",
-    name: "Nova requisição",
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/GOOGLE-ADS.png",
+    name: "Google Ads",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Vel mattis ipsum tristique semper volutpat id fringilla.",
+      "Este gatilho é ativado toda vez que um novo lead é gerado através de um formulário de leads vinculado à sua conta de anúncios no Google Ads.",
+  },
+  {
+    icon: "https://fiqon.com.br/wp-content/uploads/2025/04/Z-API.png",
+    name: "Z-APl",
+    description:
+      "Construa integrações com base em eventos específicos dentro do Z-API, através de configurações diretas e rápidas.",
   },
 ];
 
@@ -99,7 +105,7 @@ const PopularTriggers = ({ triggers = tempTriggers }) => {
               <p className="text-text-100 font-normal text-sm mt-2">{trigger.description}</p>
             </div>
             <button className="w-24 border border-[#018562] text-[#018562]  py-1 rounded-xl hover:bg-primary focus:bg-primary hover:text-white transition">
-              Testar
+              <a href="https://fiqon.app/">Testar</a>
             </button>
           </div>
         ))}
